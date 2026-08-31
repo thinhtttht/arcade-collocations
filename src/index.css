@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-arcade: 'Press Start 2P', monospace;
+    --font-cyber: 'Chakra Petch', sans-serif;
+    --font-main: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background-color: #030712;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(217, 70, 239, 0.12) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+.font-arcade {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-cyber {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Custom glow effects */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.7), 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.7), 0 0 20px rgba(236, 72, 153, 0.4);
+}
+
+.text-glow-amber {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.7), 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+.box-glow-cyan {
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.3), inset 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
+.box-glow-pink {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.3), inset 0 0 15px rgba(236, 72, 153, 0.15);
+}
+
+.box-glow-amber {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.3), inset 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+.box-glow-green {
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.3), inset 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.box-glow-purple {
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.3), inset 0 0 15px rgba(168, 85, 247, 0.15);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-glow {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* Hammer cursor for Whack-a-Mole */
+.cursor-hammer {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23f59e0b" stroke="%23ffffff" stroke-width="1.5"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 3.26-6.36 6.36-2.12-2.12 6.36-6.36a1.5 1.5 0 0 1 2.12 0l0 0a1.5 1.5 0 0 1 0 2.12Z"/></svg>') 4 4, pointer;
+}
+
+.cursor-hammer:active {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23ef4444" stroke="%23ffffff" stroke-width="2" transform="rotate(-30 12 12)"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 3.26-6.36 6.36-2.12-2.12 6.36-6.36a1.5 1.5 0 0 1 2.12 0l0 0a1.5 1.5 0 0 1 0 2.12Z"/></svg>') 8 8, pointer;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Subtle arcade scanline overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
