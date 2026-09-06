@@ -232,19 +232,34 @@ export default function SpeedQuizGame({
           </div>
         </div>
 
-        {/* Score & Pause Button */}
-        <div className="flex items-center gap-3">
+        {/* Digital Timer, Score & Pause Button */}
+        <div className="flex items-center gap-2.5">
+          {gameState === 'playing' && (
+            <div
+              className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-cyber font-extrabold text-xs sm:text-sm shadow-md transition-all ${
+                timeLeft <= 2
+                  ? 'bg-rose-950/90 border-rose-500 text-rose-300 ring-2 ring-rose-500/50 animate-pulse'
+                  : timeLeft <= 4
+                  ? 'bg-amber-950/80 border-amber-500/60 text-amber-300'
+                  : 'bg-cyan-950/80 border-cyan-500/50 text-cyan-300'
+              }`}
+            >
+              <Timer className={`w-4 h-4 shrink-0 ${timeLeft <= 2 ? 'text-rose-400 animate-spin' : 'text-cyan-400'}`} />
+              <span className="tracking-wider">0{timeLeft}s</span>
+            </div>
+          )}
+
           {gameState === 'playing' && (
             <button
               onClick={handleTogglePause}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-cyber font-bold flex items-center gap-1.5 transition shadow"
+              className="px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 text-xs font-cyber font-bold flex items-center gap-1.5 transition shadow"
             >
               <Pause className="w-3.5 h-3.5" />
-              <span>Tạm dừng</span>
+              <span className="hidden sm:inline">Tạm dừng</span>
             </button>
           )}
 
-          <div className="text-right">
+          <div className="text-right pl-1">
             <div className="text-[10px] text-slate-400 font-cyber">ĐIỂM</div>
             <div className="text-base font-extrabold text-amber-300 font-cyber">{score}</div>
           </div>
@@ -470,18 +485,38 @@ export default function SpeedQuizGame({
               </div>
             )}
 
-            {/* Timer countdown progress bar */}
-            <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-800 mt-2">
-              <motion.div
-                initial={{ width: '100%' }}
-                animate={{ width: `${(timeLeft / timerDuration) * 100}%` }}
-                transition={{ duration: 1, ease: 'linear' }}
-                className={`h-full ${
+            {/* Timer countdown progress bar with live seconds display */}
+            <div className="space-y-1.5 pt-2">
+              <div className="flex items-center justify-between text-[11px] font-cyber font-bold">
+                <span className="text-slate-400 flex items-center gap-1">
+                  <Timer className={`w-3.5 h-3.5 ${timeLeft <= 2 ? 'text-rose-400 animate-spin' : 'text-cyan-400'}`} />
+                  ĐỒNG HỒ ĐẾM NGƯỢC
+                </span>
+                <span className={`tracking-widest px-2 py-0.5 rounded-lg font-extrabold ${
                   timeLeft <= 2
-                    ? 'bg-gradient-to-r from-rose-500 to-red-600'
-                    : 'bg-gradient-to-r from-cyan-400 to-blue-500'
-                }`}
-              />
+                    ? 'bg-rose-950 text-rose-300 border border-rose-500/50 animate-pulse'
+                    : timeLeft <= 4
+                    ? 'bg-amber-950 text-amber-300 border border-amber-500/40'
+                    : 'bg-cyan-950 text-cyan-300 border border-cyan-500/40'
+                }`}>
+                  ⏳ {timeLeft}s / {timerDuration}s
+                </span>
+              </div>
+
+              <div className="w-full h-3 bg-slate-950 rounded-full overflow-hidden border border-slate-800/80 p-0.5 shadow-inner">
+                <motion.div
+                  initial={{ width: '100%' }}
+                  animate={{ width: `${(timeLeft / timerDuration) * 100}%` }}
+                  transition={{ duration: 1, ease: 'linear' }}
+                  className={`h-full rounded-full transition-all ${
+                    timeLeft <= 2
+                      ? 'bg-gradient-to-r from-rose-500 via-red-500 to-amber-500 shadow-lg shadow-rose-500/50'
+                      : timeLeft <= 4
+                      ? 'bg-gradient-to-r from-amber-400 to-orange-500'
+                      : 'bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500'
+                  }`}
+                />
+              </div>
             </div>
           </motion.div>
 
