@@ -1,5 +1,439 @@
-// Master Data: 108 Collocations (Bao gồm Unit 5 Register & Unit 6 Make/Do từ sách giáo trình)
+// Master Data: 154 Collocations (Bao gồm Unit 4, 5, 6, 7 Have/Take/Pay & Unit 8 Go/Turn/Become)
 // Viết theo phong cách "Trà Đá Vỉa Hè" & Intent Đời Thường của người Việt
+
+export const HAVE_TAKE_PAY_COLLOCATIONS_28 = [
+  // A. Have
+  {
+    id: 'htp-1',
+    vi: 'Dính tai nạn (gặp họa quẹt xe)',
+    en: 'have an accident',
+    intent: 'Kể lại vụ va quẹt xe tối qua may mà người không sao',
+    wrong: ['make an accident', 'do an accident', 'get an accident in road'],
+    note: 'Dùng "have an accident" (gặp tai nạn)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-2',
+    vi: 'Cãi nhau toé lửa (lời qua tiếng lại gay gắt)',
+    en: 'have an argument',
+    intent: 'Kể vụ hai đứa vừa to tiếng cãi nhau về cách sửa xe',
+    wrong: ['make an argument', 'do an argument', 'give an argument'],
+    note: 'Dùng "have an argument / have a row" (tranh cãi gay gắt)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-3',
+    vi: 'Nghỉ tay xả hơi (làm điếu thuốc chén trà)',
+    en: 'have a break',
+    intent: 'Rủ nhau làm xong bài tập này rồi nghỉ giải lao tí',
+    wrong: ['do a break', 'make a break', 'take a pause break'],
+    note: 'Dùng "have a break / take a break" (nghỉ giải lao)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-4',
+    vi: 'Tám chuyện đôi câu (ngồi buôn dưa lê)',
+    en: 'have a chat',
+    intent: 'Hẹn sau cuộc họp nán lại vài phút để tâm sự',
+    wrong: ['make a chat', 'do a chat', 'speak a chat'],
+    note: 'Dùng "have a chat / have a conversation" (trò chuyện thân mật)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-5',
+    vi: 'Gặp trắc trở (loay hoay mãi không xong)',
+    en: 'have difficulty',
+    intent: 'Kể chuyện cả lớp ai cũng lúng túng chưa hiểu phải làm gì',
+    wrong: ['take difficulty', 'make difficulty', 'do difficulty'],
+    note: 'Dùng "have difficulty (in) doing something" (gặp khó khăn khi làm gì)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-6',
+    vi: 'Gặp ác mộng (nằm mơ giật mình toát mồ hôi)',
+    en: 'have a nightmare',
+    intent: 'Kể với bạn đêm qua ngủ mơ thấy cảnh tượng hãi hùng',
+    wrong: ['see a nightmare', 'make a nightmare', 'dream a nightmare'],
+    note: 'Dùng "have a nightmare / have a dream" (gặp ác mộng/chiêm bao)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-7',
+    vi: 'Trải qua một phen thót tim (trải nghiệm nhớ đời)',
+    en: 'have an experience',
+    intent: 'Kể lại một tình huống dựng tóc gáy vừa gặp hôm trước',
+    wrong: ['make an experience', 'do an experience', 'take an experience'],
+    note: 'Dùng "have a frightening/great experience" (có một trải nghiệm)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-8',
+    vi: 'Linh cảm chẳng lành (ngửi thấy có mùi lạ)',
+    en: 'have a feeling',
+    intent: 'Nhắc bạn cẩn thận vì trực giác mách bảo sắp có chuyện không ổn',
+    wrong: ['take a feeling', 'make a feeling', 'give a feeling'],
+    note: 'Dùng "have a feeling (that)" (có linh cảm, cảm giác là)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-9',
+    vi: 'Quẩy hết mình (chơi vui tẹt ga)',
+    en: 'have fun',
+    intent: 'Chúc bạn đi dã ngoại chơi vui vẻ hết nấc',
+    wrong: ['make fun for you', 'do fun', 'take fun out'],
+    note: 'Dùng "have fun / have a good time" (vui chơi thỏa thích)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-10',
+    vi: 'Ngó qua một cái (liếc mắt xem thử)',
+    en: 'have a look',
+    intent: 'Bảo sếp muốn đảo mắt qua kiểm tra xem anh em đang làm gì',
+    wrong: ['do a look', 'make a look', 'give look'],
+    note: 'Dùng "have a look (at)" (nhìn, xem qua)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-11',
+    vi: 'Mở tiệc ăn mừng (lên kèo quẩy liên hoan)',
+    en: 'have a party',
+    intent: 'Rủ cả lớp cuối kỳ tổ chức một bữa tiệc quẩy tưng bừng',
+    wrong: ['make a party', 'do a party', 'create party'],
+    note: 'Dùng "have a party" (tổ chức tiệc)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-12',
+    vi: 'Bí bài (vướng mắc rắc rối)',
+    en: 'have problems',
+    intent: 'Dặn bạn nếu làm bài tập bị tắc chỗ nào thì cứ hỏi thầy',
+    wrong: ['get problems', 'make problems', 'take problems'],
+    note: 'Dùng "have a problem / have problems" (gặp vấn đề khó khăn)',
+    category: 'Have'
+  },
+  {
+    id: 'htp-13',
+    vi: 'Thử sức làm một nháy (nhào vô thử xem sao)',
+    en: 'have a go',
+    intent: 'Sau khi hướng dẫn xong thì bảo bạn nhảy vào làm thử xem',
+    wrong: ['make a go', 'do a go', 'take a go'],
+    note: 'Dùng "have a go / have a try" (thử làm cái gì)',
+    category: 'Have'
+  },
+
+  // B. Take
+  {
+    id: 'htp-14',
+    vi: 'Đi nghỉ mát xả hơi (làm chuyến du lịch)',
+    en: 'take a holiday',
+    intent: 'Khen quyết định đi nghỉ dưỡng ở đây là quá sáng suốt',
+    wrong: ['make a holiday', 'do a holiday', 'have a holiday trip'],
+    note: 'Dùng "take a holiday" (đi nghỉ mát, đi nghỉ phép)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-15',
+    vi: 'Lên đường phượt (làm chuyến đi núi)',
+    en: 'take a trip',
+    intent: 'Kể lại chuyến đi phượt lên vùng núi ngày hôm qua',
+    wrong: ['make a trip', 'do a trip', 'have a trip trip'],
+    note: 'Dùng "take a trip" (thực hiện một chuyến đi)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-16',
+    vi: 'Bắt chuyến tàu hỏa (nhảy tàu/nhảy xe bus)',
+    en: 'take a train',
+    intent: 'Chỉ đường: trước tiên nhảy tàu hỏa rồi đón xe bus vào làng',
+    wrong: ['catch a train fast', 'drive a train', 'go on train'],
+    note: 'Dùng "take a train / take a bus" (đi bằng tàu/xe bus)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-17',
+    vi: 'Phải lòng ngay tắp lự (vừa nhìn là ưng cái bụng)',
+    en: 'take a liking to',
+    intent: 'Kể chuyện vừa đặt chân đến ngôi làng là thấy mê mẩn ngay',
+    wrong: ['have a liking to', 'make a liking on', 'give a liking for'],
+    note: 'Dùng "take a liking to someone/something" (bắt đầu thích, có cảm tình ngay)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-18',
+    vi: 'Liều ăn nhiều (đánh cược một phen)',
+    en: 'take a risk',
+    intent: 'Biết là mạo hiểm vì chưa biết nơi đó ra sao nhưng vẫn cứ liều đi',
+    wrong: ['make a risk', 'do a risk', 'play a risk'],
+    note: 'Dùng "take a risk / taking a risk" (chấp nhận rủi ro, mạo hiểm)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-19',
+    vi: 'Tò mò quan tâm (hứng thú làm quen)',
+    en: 'take an interest in',
+    intent: 'Kể lại mấy đứa trẻ địa phương rất hào hứng dẫn đường chỉ chỗ chơi',
+    wrong: ['make an interest in', 'have an interest on', 'give an interest to'],
+    note: 'Dùng "take an interest in" (hứng thú, quan tâm đến)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-20',
+    vi: 'Chụp cả đống ảnh (bấm máy lia lịa)',
+    en: 'take photos',
+    intent: 'Khoe chuyến đi vừa rồi chụp được cả rổ ảnh đẹp sống ảo',
+    wrong: ['make photos', 'do photos', 'shoot photos down'],
+    note: 'Dùng "take photos / take a lot of photos" (chụp nhiều ảnh)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-21',
+    vi: 'Nắm lấy thời cơ (liều thử vận may)',
+    en: 'take a chance',
+    intent: 'Khuyên bạn cứ liều xin nghỉ việc để tìm cơ hội mới tốt hơn',
+    wrong: ['make a chance', 'do a chance', 'grab chance away'],
+    note: 'Dùng "take a chance" (thử vận may, nắm lấy cơ hội)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-22',
+    vi: 'Ghét ra mặt (nhìn thấy là ngứa mắt)',
+    en: 'take a dislike to',
+    intent: 'Khuyên bạn nghỉ việc vì sếp đã có ác cảm thì ở lại chỉ khổ',
+    wrong: ['have a dislike for', 'make a dislike to', 'give a dislike to'],
+    note: 'Dùng "take a dislike to someone" (có ác cảm, ghét ai đó ngay)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-23',
+    vi: 'Tranh thủ tận dụng triệt để (bắt lấy lợi thế)',
+    en: 'take advantage of',
+    intent: 'Khuyên bạn ở London thì tranh thủ cơ hội việc làm phong phú',
+    wrong: ['make advantage of', 'use advantage for', 'do advantage on'],
+    note: 'Dùng "take advantage of" (tận dụng lợi thế/cơ hội)',
+    category: 'Take'
+  },
+  {
+    id: 'htp-24',
+    vi: 'Hành động ngay và luôn (xắn tay áo lên làm)',
+    en: 'take action',
+    intent: 'Giục bạn đừng ngồi than thở nữa mà hãy hành động ngay đi',
+    wrong: ['make action', 'do action', 'create action'],
+    note: 'Dùng "take action" (hành động ngay)',
+    category: 'Take'
+  },
+
+  // C. Pay
+  {
+    id: 'htp-25',
+    vi: 'Dỏng tai lên nghe (tập trung chú ý)',
+    en: 'pay attention',
+    intent: 'Nhắc cả lớp tập trung nghe giáo viên giảng bài, đừng nói chuyện riêng',
+    wrong: ['give attention', 'make attention', 'take attention'],
+    note: 'Dùng "pay attention (to)" (chú ý lắng nghe)',
+    category: 'Pay'
+  },
+  {
+    id: 'htp-26',
+    vi: 'Mở lời khen ngợi (nói lời có cánh)',
+    en: 'pay a compliment',
+    intent: 'Đang định khen bạn một câu mà nó lại hiểu lầm sang ý xấu',
+    wrong: ['give a compliment to', 'make a compliment', 'do a compliment'],
+    note: 'Dùng "pay someone a compliment" (khen ngợi ai đó)',
+    category: 'Pay'
+  },
+  {
+    id: 'htp-27',
+    vi: 'Đến viếng lần cuối (tiễn biệt người đã khuất)',
+    en: 'pay their last respects',
+    intent: 'Mọi người đến dự đám tang để nghiêng mình tiễn đưa người đã khuất',
+    wrong: ['give last respects', 'send final respects', 'make last respects'],
+    note: 'Dùng "pay (one\'s) last respects (to)" (đến viếng, tiễn biệt lần cuối)',
+    category: 'Pay'
+  },
+  {
+    id: 'htp-28',
+    vi: 'Tôn vinh công lao (tri ân đóng góp to lớn)',
+    en: 'pay tribute',
+    intent: 'Sếp phát biểu bài diễn văn tri ân những cống hiến của nhân viên về hưu',
+    wrong: ['give tribute to', 'make tribute for', 'send tribute'],
+    note: 'Dùng "pay tribute (to)" (bày tỏ lòng tri ân, tôn vinh công trạng)',
+    category: 'Pay'
+  }
+];
+
+export const CHANGE_VERBS_COLLOCATIONS_18 = [
+  // A. Go, not get
+  {
+    id: 'chg-1',
+    vi: 'Phát điên phát rồ (tức nổ đom đóm mắt)',
+    en: 'go mad',
+    intent: 'Kêu trời vì gặp việc quá bực mình khiến đầu óc muốn nổ tung',
+    wrong: ['get madly', 'turn mad', 'become madly'],
+    note: 'Dùng "go mad / go bald / go grey / go blind / go deaf" (thay đổi thể chất/tâm trí)',
+    category: 'Go'
+  },
+  {
+    id: 'chg-2',
+    vi: 'Đỏ mặt tía tai (ngượng chín cả người)',
+    en: 'went red',
+    intent: 'Kể lại cảnh anh chàng xấu hổ đến mức mặt đỏ bừng bừng',
+    wrong: ['got red', 'turned reddy', 'became red face'],
+    note: 'Dùng "go red / went red" (mặt đỏ bừng vì xấu hổ)',
+    category: 'Go'
+  },
+  {
+    id: 'chg-3',
+    vi: 'Trời tối sầm lại (mây đen kéo kín mít)',
+    en: 'went dark',
+    intent: 'Tả cảnh bầu trời đột ngột tối đen như mực rồi đổ mưa như trút',
+    wrong: ['got darkly', 'turned darkness', 'became darkish'],
+    note: 'Dùng "go dark / went dark" (trời tối sầm đột ngột)',
+    category: 'Go'
+  },
+  {
+    id: 'chg-4',
+    vi: 'Trang giấy ngả vàng ố (ố màu thời gian)',
+    en: 'gone yellow',
+    intent: 'Chỉ vào cuốn sách cũ qua bao năm tháng giấy đã ngả vàng',
+    wrong: ['got yellow', 'turned yellowish', 'became yellowed'],
+    note: 'Dùng "go yellow / gone yellow" (giấy ngả màu vàng theo năm tháng)',
+    category: 'Go'
+  },
+
+  // B. Turn, not get
+  {
+    id: 'chg-5',
+    vi: 'Nhuộm màu vàng rực (ráng chiều dát vàng)',
+    en: 'turned gold',
+    intent: 'Tả cảnh hoàng hôn buông xuống nhuộm vàng cả bầu trời',
+    wrong: ['went gold', 'got gold', 'became golden'],
+    note: 'Dùng "turn gold" (bầu trời chuyển màu vàng óng)',
+    category: 'Turn'
+  },
+  {
+    id: 'chg-6',
+    vi: 'Cà chua chín đỏ au (chín mọng tới mùa hái)',
+    en: 'turn red',
+    intent: 'Kể khi cà chua chín đỏ thì nông dân bắt đầu thu hoạch đem bán',
+    wrong: ['go red', 'get red', 'become red'],
+    note: 'Dùng "turn red" (quả chín chuyển màu đỏ)',
+    category: 'Turn'
+  },
+  {
+    id: 'chg-7',
+    vi: 'Bạc trắng cả đầu sau một đêm (sốc đến bạc tóc)',
+    en: 'turned white',
+    intent: 'Kể mẹ nghe tin dữ sốc đến mức tóc bạc trắng chỉ sau một đêm',
+    wrong: ['went white hair', 'got white', 'became whited'],
+    note: 'Dùng "turned white" (tóc bạc trắng sau cú sốc lớn)',
+    category: 'Turn'
+  },
+
+  // C. Get and become
+  {
+    id: 'chg-8',
+    vi: 'Dính bầu / Có tin vui mang thai',
+    en: 'became pregnant',
+    intent: 'Kể chuyện cô ấy quyết định cai thuốc lá ngay khi biết mình có bầu',
+    wrong: ['got pregnant in essay', 'went pregnant', 'turned pregnant'],
+    note: 'Dùng "become pregnant" (văn phong trang trọng/bài viết: mang thai)',
+    category: 'Become'
+  },
+  {
+    id: 'chg-9',
+    vi: 'Nhúng tay tham gia (dấn thân góp sức)',
+    en: 'become involved',
+    intent: 'Bày tỏ mong muốn được tham gia sâu vào hoạt động gây quỹ từ thiện',
+    wrong: ['get involvedly', 'go involved', 'turn involved'],
+    note: 'Dùng "become involved (in)" (tham gia, dấn thân vào)',
+    category: 'Become'
+  },
+  {
+    id: 'chg-10',
+    vi: 'Rơi vào trầm cảm (u uất suy sụp)',
+    en: 'became depressed',
+    intent: 'Kể lại việc anh ấy bị suy sụp tinh thần sau khi vợ qua đời',
+    wrong: ['went depressed', 'turned depressed', 'got depressing'],
+    note: 'Dùng "become depressed" (rơi vào trạng thái trầm cảm)',
+    category: 'Become'
+  },
+  {
+    id: 'chg-11',
+    vi: 'Nổi như cồn (nổi tiếng khắp vùng)',
+    en: 'become famous',
+    intent: 'Khoe tiệm bánh gần nhà nổi tiếng khắp nơi nhờ món bánh táo tuyệt đỉnh',
+    wrong: ['get famous', 'go famous', 'turn famous'],
+    note: 'Dùng "become famous (for)" (trở nên nổi tiếng)',
+    category: 'Become'
+  },
+
+  // D. Alternatives to get and become
+  {
+    id: 'chg-12',
+    vi: 'Lăn ra ốm nặng (ngã bệnh phải nhập viện)',
+    en: 'fell ill',
+    intent: 'Kể chuyện cô ấy đột ngột đổ bệnh phải đưa đi cấp cứu',
+    wrong: ['got ill in essay', 'went ill', 'turned ill'],
+    note: 'Dùng "fall ill" (ngã bệnh, bị ốm)',
+    category: 'Alternatives'
+  },
+  {
+    id: 'chg-13',
+    vi: 'Im phăng phắc (cả phòng nín thở im bặt)',
+    en: 'fell silent',
+    intent: 'Tả cảnh mọi người đều sững sờ im lặng khi nghe tin tức gây sốc',
+    wrong: ['got silent', 'went silently', 'became quieted'],
+    note: 'Dùng "fall silent" (im bặt, nín lặng)',
+    category: 'Alternatives'
+  },
+  {
+    id: 'chg-14',
+    vi: 'Tuổi tác ngày càng cao (bước sang tuổi xế chiều)',
+    en: 'grew older',
+    intent: 'Kể bố khi có tuổi thì bắt đầu giảm bớt công việc để nghỉ ngơi',
+    wrong: ['got older in essay', 'went older', 'turned older'],
+    note: 'Dùng "grow older" (ngày càng già đi/lớn tuổi)',
+    category: 'Alternatives'
+  },
+  {
+    id: 'chg-15',
+    vi: 'Tiếng gầm rú ngày càng to (rền vang đinh tai)',
+    en: 'grew louder',
+    intent: 'Tả âm thanh ngày càng lớn dần khi máy bay đang hạ cánh tới gần',
+    wrong: ['got louder in essay', 'went louder', 'turned loud'],
+    note: 'Dùng "grow louder" (âm thanh ngày càng lớn dần)',
+    category: 'Alternatives'
+  },
+
+  // E. Overusing and misusing get (Alternatives)
+  {
+    id: 'chg-16',
+    vi: 'Lên cơn đau tim (đột quỵ nhồi máu cơ tim)',
+    en: 'had a heart attack',
+    intent: 'Kể lại một năm trước ông ấy vừa trải qua cơn đau tim thập tử nhất sinh',
+    wrong: ['got a heart attack', 'made a heart attack', 'took a heart attack'],
+    note: 'Dùng "have/suffer a heart attack" (trải qua cơn đau tim)',
+    category: 'Alternatives'
+  },
+  {
+    id: 'chg-17',
+    vi: 'Sinh con đẻ cái (có mụn con)',
+    en: 'have a child',
+    intent: 'Nói về ước mơ sau này khi mình có con của riêng mình',
+    wrong: ['get a child', 'make a child', 'take a child'],
+    note: 'Dùng "have a child" (có con, sinh con)',
+    category: 'Alternatives'
+  },
+  {
+    id: 'chg-18',
+    vi: 'Mẹ tròn con vuông (vừa hạ sinh em bé)',
+    en: 'had a baby',
+    intent: 'Báo tin vui tháng 6 vừa rồi đã sinh một bé trai kháu khỉnh',
+    wrong: ['got a baby', 'made a baby in hospital', 'took a baby out'],
+    note: 'Dùng "have a baby" (sinh em bé)',
+    category: 'Alternatives'
+  }
+];
 
 export const MAKE_AND_DO_COLLOCATIONS_24 = [
   // A. Make
@@ -662,6 +1096,12 @@ export const TYPES_OF_COLLOCATIONS_24 = [
 ];
 
 export const DEFAULT_COLLOCATIONS = [
+  // 28 Collocations Unit 7: Have, Take & Pay
+  ...HAVE_TAKE_PAY_COLLOCATIONS_28,
+
+  // 18 Collocations Unit 8: Go, Turn, Become & Alternatives
+  ...CHANGE_VERBS_COLLOCATIONS_18,
+
   // 24 Collocations Unit 6: Make & Do
   ...MAKE_AND_DO_COLLOCATIONS_24,
 
@@ -1019,15 +1459,31 @@ export const DEFAULT_COLLOCATIONS = [
 export const INITIAL_DECKS = [
   {
     id: 'deck-all',
-    name: 'Tất cả 108 Collocations (Đầy đủ mọi Unit)',
-    description: 'Bộ sưu tập trọn vẹn 108 collocations chuẩn phong cách Trà Đá Đời Sống & Intent Người Việt',
+    name: 'Tất cả 154 Collocations (Đầy đủ mọi Unit)',
+    description: 'Bộ sưu tập trọn vẹn 154 collocations chuẩn phong cách Trà Đá Đời Sống & Intent Người Việt',
     items: DEFAULT_COLLOCATIONS,
     selectedIds: DEFAULT_COLLOCATIONS.map(item => item.id),
     createdAt: Date.now()
   },
   {
+    id: 'deck-have-take-pay',
+    name: 'Unit 7: Have, Take & Pay (28 Collocations Trà Đá Đời Sống)',
+    description: '28 Collocations với Have, Take & Pay in đậm từ sách giáo trình chuẩn ngữ cảnh thực chiến',
+    items: HAVE_TAKE_PAY_COLLOCATIONS_28,
+    selectedIds: HAVE_TAKE_PAY_COLLOCATIONS_28.map(item => item.id),
+    createdAt: Date.now()
+  },
+  {
+    id: 'deck-change-verbs',
+    name: 'Unit 8: Go, Turn, Become & Thay Thế (18 Collocations Biến Đổi)',
+    description: '18 Collocations miêu tả sự biến đổi (Go mad, turn gold, become famous, fall ill, grow louder)',
+    items: CHANGE_VERBS_COLLOCATIONS_18,
+    selectedIds: CHANGE_VERBS_COLLOCATIONS_18.map(item => item.id),
+    createdAt: Date.now()
+  },
+  {
     id: 'deck-make-and-do',
-    name: 'Unit 6: Make & Do (24 Collocations Tuyệt Đối Không Được Nhầm)',
+    name: 'Unit 6: Make & Do (24 Collocations Tuyệt Đối Không Nhầm)',
     description: '24 Collocations đi với Make vs Do từ giáo trình chuẩn phong cách Trà Đá thực chiến',
     items: MAKE_AND_DO_COLLOCATIONS_24,
     selectedIds: MAKE_AND_DO_COLLOCATIONS_24.map(item => item.id),
@@ -1054,10 +1510,10 @@ export const INITIAL_DECKS = [
     name: 'Giao Tiếp & Hành Động Hàng Ngày',
     description: 'Các cụm từ dùng liên tục trong cuộc sống, văn phòng, bạn bè',
     items: DEFAULT_COLLOCATIONS.filter(item =>
-      ['Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
+      ['Have', 'Take', 'Pay', 'Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
     ),
     selectedIds: DEFAULT_COLLOCATIONS.filter(item =>
-      ['Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
+      ['Have', 'Take', 'Pay', 'Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
     ).map(item => item.id),
     createdAt: Date.now()
   },

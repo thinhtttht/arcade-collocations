@@ -37,17 +37,17 @@ export default function App() {
   const [showDeckModal, setShowDeckModal] = useState(false);
   const [deckModalTab, setDeckModalTab] = useState('list');
 
-  // Decks state persisted in LocalStorage (merge with newest Unit 6 Make & Do & Tra Da intents)
+  // Decks state persisted in LocalStorage (merge with newest Unit 7 Have/Take/Pay & Unit 8 Change Verbs)
   const [decks, setDecks] = useState(() => {
     try {
-      const saved = localStorage.getItem('arcade_collocations_decks_v8_makedo');
+      const saved = localStorage.getItem('arcade_collocations_decks_v9_allunits');
       if (saved) {
         const parsed = JSON.parse(saved);
         const updatedParsed = parsed.map(deck => {
           if (deck.id === 'deck-all') {
             return {
               ...deck,
-              name: 'Tất cả 108 Collocations (Đầy đủ mọi Unit)',
+              name: 'Tất cả 154 Collocations (Đầy đủ mọi Unit)',
               items: DEFAULT_COLLOCATIONS,
               selectedIds: DEFAULT_COLLOCATIONS.map(i => i.id)
             };
@@ -80,17 +80,17 @@ export default function App() {
 
   const [activeDeckId, setActiveDeckId] = useState(() => {
     try {
-      const savedId = localStorage.getItem('arcade_collocations_active_deck_id_v8');
-      return savedId || 'deck-make-and-do';
+      const savedId = localStorage.getItem('arcade_collocations_active_deck_id_v9');
+      return savedId || 'deck-have-take-pay';
     } catch (e) {
-      return 'deck-make-and-do';
+      return 'deck-have-take-pay';
     }
   });
 
   // Save decks to LocalStorage
   useEffect(() => {
     try {
-      localStorage.setItem('arcade_collocations_decks_v8_makedo', JSON.stringify(decks));
+      localStorage.setItem('arcade_collocations_decks_v9_allunits', JSON.stringify(decks));
     } catch (e) {}
   }, [decks]);
 
