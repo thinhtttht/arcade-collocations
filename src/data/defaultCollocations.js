@@ -1,5 +1,227 @@
-// Master Data: 84 Collocations (Bao gồm Unit 5 Register mới từ sách giáo trình)
+// Master Data: 108 Collocations (Bao gồm Unit 5 Register & Unit 6 Make/Do từ sách giáo trình)
 // Viết theo phong cách "Trà Đá Vỉa Hè" & Intent Đời Thường của người Việt
+
+export const MAKE_AND_DO_COLLOCATIONS_24 = [
+  // A. Make
+  {
+    id: 'make-1',
+    vi: 'Sắp xếp thu xếp trước (lo liệu chu đáo)',
+    en: 'make arrangements for',
+    intent: 'Chủ động chuẩn bị điều kiện tốt nhất cho ai đó (học sinh, khách quý)',
+    wrong: ['do arrangements for', 'take arrangements to', 'build arrangements for'],
+    note: 'Dùng "make arrangements for" (sắp xếp, lên kế hoạch chuẩn bị)',
+    category: 'Make'
+  },
+  {
+    id: 'make-2',
+    vi: 'Thay máu / Đổi mới toàn diện (cải tổ cách làm)',
+    en: 'make a change',
+    intent: 'Sếp mới về muốn cải tổ lại quy trình làm việc cho hiệu quả hơn',
+    wrong: ['do a change', 'create a change', 'give a change'],
+    note: 'Dùng "make a change / make changes" (thực hiện những thay đổi)',
+    category: 'Make'
+  },
+  {
+    id: 'make-3',
+    vi: 'Chọn một trong hai (đứng trước ngã ba đường)',
+    en: 'make a choice',
+    intent: 'Bắt buộc phải đưa ra lựa chọn khó khăn giữa sự nghiệp và gia đình',
+    wrong: ['do a choice', 'take a choice', 'have a choice out'],
+    note: 'Dùng "make a choice" (đưa ra sự lựa chọn)',
+    category: 'Make'
+  },
+  {
+    id: 'make-4',
+    vi: 'Góp vài lời bình luận (thả comment nhận xét)',
+    en: 'make a comment',
+    intent: 'Mời mọi người nêu ý kiến hoặc cảm nghĩ sau buổi thuyết trình',
+    wrong: ['do a comment', 'give a comment out', 'say a comment'],
+    note: 'Dùng "make a comment / make comments" (đưa ra bình luận, nhận xét)',
+    category: 'Make'
+  },
+  {
+    id: 'make-5',
+    vi: 'Góp công góp sức (đóng góp ý kiến đắt giá)',
+    en: 'make a contribution to',
+    intent: 'Khen ngợi ai đó vừa có đóng góp giá trị cho buổi thảo luận',
+    wrong: ['do a contribution to', 'give a contribution into', 'pay a contribution to'],
+    note: 'Dùng "make a contribution to" (đóng góp cho cái gì)',
+    category: 'Make'
+  },
+  {
+    id: 'make-6',
+    vi: 'Chốt hạ quyết định (chốt kèo dứt khoát)',
+    en: 'make a decision',
+    intent: 'Thở phào vì người phải đưa ra quyết định đau đầu là bạn chứ không phải mình',
+    wrong: ['do a decision', 'take a decision', 'give a decision'],
+    note: 'Dùng "make a decision" (đưa ra quyết định)',
+    category: 'Make'
+  },
+  {
+    id: 'make-7',
+    vi: 'Cố gắng hết sức (gồng mình cày cuốc)',
+    en: 'make an effort',
+    intent: 'Khen đứa em kỳ này đã chịu khó nỗ lực học môn Toán',
+    wrong: ['do an effort', 'give an effort', 'try an effort'],
+    note: 'Dùng "make an effort" (nỗ lực, cố gắng)',
+    category: 'Make'
+  },
+  {
+    id: 'make-8',
+    vi: 'Tìm cớ thoái thác (kiếm lý do để chuồn)',
+    en: 'make an excuse',
+    intent: 'Lười đi chơi tối nên bàn nhau bịa tạm một lý do để ở nhà ngủ',
+    wrong: ['do an excuse', 'create an excuse', 'tell an excuse'],
+    note: 'Dùng "make an excuse" (bịa lý do, viện cớ)',
+    category: 'Make'
+  },
+  {
+    id: 'make-9',
+    vi: 'Kết bạn bốn phương (bắt chuyện làm quen nhanh)',
+    en: 'make friends',
+    intent: 'Khen ai đó có tính cách cởi mở, đi đâu cũng dễ làm quen bạn mới',
+    wrong: ['do friends', 'build friends', 'create friends'],
+    note: 'Dùng "make friends" (kết bạn, làm quen)',
+    category: 'Make'
+  },
+  {
+    id: 'make-10',
+    vi: 'Lên hương trông thấy (nhìn sáng sủa hẳn ra)',
+    en: 'make an improvement',
+    intent: 'Khen căn phòng sau khi sơn lại nhìn đẹp và xịn hơn hẳn',
+    wrong: ['do an improvement', 'have an improvement', 'build an improvement'],
+    note: 'Dùng "make an improvement" (tạo ra sự cải thiện, làm cho tốt hơn)',
+    category: 'Make'
+  },
+  {
+    id: 'make-11',
+    vi: 'Tính tiền nhầm (lỡ phạm sai sót)',
+    en: 'make a mistake',
+    intent: 'Phát hiện nhân viên quán tính nhầm tiền trong hóa đơn',
+    wrong: ['do a mistake', 'create a mistake', 'build a mistake'],
+    note: 'Dùng "make a mistake" (mắc lỗi, làm sai)',
+    category: 'Make'
+  },
+  {
+    id: 'make-12',
+    vi: 'Gọi vài cuộc điện thoại (bốc máy alo xử lý việc)',
+    en: 'make a phone call',
+    intent: 'Bảo bạn đợi tí để gọi vài cuộc điện thoại giải quyết việc trước bữa tối',
+    wrong: ['do a phone call', 'create a phone call', 'take a phone call out'],
+    note: 'Dùng "make a phone call" (thực hiện cuộc gọi điện thoại)',
+    category: 'Make'
+  },
+  {
+    id: 'make-13',
+    vi: 'Tiến bộ thấy rõ (lên trình đều đều)',
+    en: 'make progress',
+    intent: 'Khen ai đó học hành ngày càng tiến bộ, nắm bài chắc hơn',
+    wrong: ['do progress', 'build progress', 'grow progress'],
+    note: 'Dùng "make progress" (tiến bộ, đạt được tiến triển)',
+    category: 'Make'
+  },
+
+  // B. Do
+  {
+    id: 'do-1',
+    vi: 'Chơi hết mình (cố gắng hết khả năng)',
+    en: 'do your best',
+    intent: 'Động viên bạn cứ bình tĩnh làm hết sức trong phòng thi là được',
+    wrong: ['make your best', 'try your bestly', 'give your best out'],
+    note: 'Dùng "do your best" (làm hết sức mình, nỗ lực tối đa)',
+    category: 'Do'
+  },
+  {
+    id: 'do-2',
+    vi: 'Gây thiệt hại tan hoang (thổi bay mái nhà)',
+    en: 'do damage',
+    intent: 'Kể lại trận bão đêm qua làm hỏng hóc mái nhà',
+    wrong: ['make damage', 'create damage', 'give damage to roof'],
+    note: 'Dùng "do damage (to)" (gây thiệt hại, làm hư hỏng)',
+    category: 'Do'
+  },
+  {
+    id: 'do-3',
+    vi: 'Làm thí nghiệm thực tế (test thử nghiệm)',
+    en: 'do an experiment',
+    intent: 'Thực hiện bài test xem kim loại phản ứng với nước ra sao',
+    wrong: ['make an experiment', 'build an experiment', 'create an experiment'],
+    note: 'Dùng "do an experiment" (tiến hành thí nghiệm)',
+    category: 'Do'
+  },
+  {
+    id: 'do-4',
+    vi: 'Luyện bài tập thực chiến (làm bài tập rèn tay)',
+    en: 'do exercises',
+    intent: 'Hẹn bạn ngày mai cùng làm bài tập luyện Collocations',
+    wrong: ['make exercises', 'take exercises on book', 'create exercises'],
+    note: 'Dùng "do exercises" (làm bài tập thực hành)',
+    category: 'Do'
+  },
+  {
+    id: 'do-5',
+    vi: 'Giúp giùm một tay (nhờ vả việc nhỏ)',
+    en: 'do someone a favour',
+    intent: 'Nhờ bạn tiện đường ghé siêu thị mua giùm hộp sữa',
+    wrong: ['make someone a favour', 'give someone a favour to', 'take someone a favour'],
+    note: 'Dùng "do someone a favour" (giúp đỡ ai một việc)',
+    category: 'Do'
+  },
+  {
+    id: 'do-6',
+    vi: 'Giúp đỡ chí tình (làm ơn nghĩa lớn)',
+    en: 'do someone a good turn',
+    intent: 'Khen bạn tốt bụng đã cho mượn xe trong lúc xe mình nằm gara',
+    wrong: ['make someone a good turn', 'give someone a good turn', 'do someone a good round'],
+    note: 'Dùng "do someone a good turn" (làm một việc tốt giúp đỡ ai đó)',
+    category: 'Do'
+  },
+  {
+    id: 'do-7',
+    vi: 'Lợi bất cập hại (gây họa nhiều hơn lợi)',
+    en: 'do harm',
+    intent: 'Cảnh báo đổi luật lúc này chỉ tổ gây hại thêm chứ chẳng được tích sự gì',
+    wrong: ['make harm', 'create harm', 'bring harm out'],
+    note: 'Dùng "do harm" (gây hại - vd: do more harm than good)',
+    category: 'Do'
+  },
+  {
+    id: 'do-8',
+    vi: 'Làm tóc chải chuốt (vuốt keo sửa soạn đầu tóc)',
+    en: 'do your hair',
+    intent: 'Bảo đợi xíu chưa đi được vì chưa chải sấy tóc xong',
+    wrong: ['make your hair', 'create your hair', 'fix your hair on'],
+    note: 'Dùng "do your hair" (làm tóc, chải chuốt đầu tóc)',
+    category: 'Do'
+  },
+  {
+    id: 'do-9',
+    vi: 'Làm bài tập về nhà (cày bài tập)',
+    en: 'do your homework',
+    intent: 'Dặn con đi học về là phải ngồi vào bàn làm bài tập ngay',
+    wrong: ['make your homework', 'write your homework out', 'build homework'],
+    note: 'Dùng "do homework" (làm bài tập về nhà)',
+    category: 'Do'
+  },
+  {
+    id: 'do-10',
+    vi: 'Giặt giũ quần áo (chia việc nhà)',
+    en: 'do the washing',
+    intent: 'Gạ kèo chia việc: tui giặt đồ thì bạn phải ủi đồ đấy nhé',
+    wrong: ['make the washing', 'clean the washing', 'take the washing'],
+    note: 'Dùng "do the washing / do the ironing / do the shopping" (làm việc nhà)',
+    category: 'Do'
+  },
+  {
+    id: 'do-11',
+    vi: 'Cày việc một lúc (xử lý công việc dự án)',
+    en: 'do some work',
+    intent: 'Hẹn nhau cày nốt phần việc dự án rồi cùng đi xem phim',
+    wrong: ['make some work', 'create some work', 'build some work'],
+    note: 'Dùng "do some work" (làm việc, giải quyết công việc)',
+    category: 'Do'
+  }
+];
 
 export const REGISTER_COLLOCATIONS_22 = [
   // Intro & Spoken English (Khẩu ngữ / Giao tiếp đời thường)
@@ -440,6 +662,9 @@ export const TYPES_OF_COLLOCATIONS_24 = [
 ];
 
 export const DEFAULT_COLLOCATIONS = [
+  // 24 Collocations Unit 6: Make & Do
+  ...MAKE_AND_DO_COLLOCATIONS_24,
+
   // 22 Collocations Unit 5: Register
   ...REGISTER_COLLOCATIONS_22,
 
@@ -794,10 +1019,18 @@ export const DEFAULT_COLLOCATIONS = [
 export const INITIAL_DECKS = [
   {
     id: 'deck-all',
-    name: 'Tất cả 84 Collocations (Đầy đủ mọi Unit)',
-    description: 'Bộ sưu tập trọn vẹn 84 collocations chuẩn phong cách Trà Đá Đời Sống & Intent Người Việt',
+    name: 'Tất cả 108 Collocations (Đầy đủ mọi Unit)',
+    description: 'Bộ sưu tập trọn vẹn 108 collocations chuẩn phong cách Trà Đá Đời Sống & Intent Người Việt',
     items: DEFAULT_COLLOCATIONS,
     selectedIds: DEFAULT_COLLOCATIONS.map(item => item.id),
+    createdAt: Date.now()
+  },
+  {
+    id: 'deck-make-and-do',
+    name: 'Unit 6: Make & Do (24 Collocations Tuyệt Đối Không Được Nhầm)',
+    description: '24 Collocations đi với Make vs Do từ giáo trình chuẩn phong cách Trà Đá thực chiến',
+    items: MAKE_AND_DO_COLLOCATIONS_24,
+    selectedIds: MAKE_AND_DO_COLLOCATIONS_24.map(item => item.id),
     createdAt: Date.now()
   },
   {
@@ -821,10 +1054,10 @@ export const INITIAL_DECKS = [
     name: 'Giao Tiếp & Hành Động Hàng Ngày',
     description: 'Các cụm từ dùng liên tục trong cuộc sống, văn phòng, bạn bè',
     items: DEFAULT_COLLOCATIONS.filter(item =>
-      ['Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
+      ['Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
     ),
     selectedIds: DEFAULT_COLLOCATIONS.filter(item =>
-      ['Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
+      ['Make', 'Do', 'Spoken English', 'Daily Action', 'Social', 'Communication', 'Action'].includes(item.category)
     ).map(item => item.id),
     createdAt: Date.now()
   },

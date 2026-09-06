@@ -37,17 +37,17 @@ export default function App() {
   const [showDeckModal, setShowDeckModal] = useState(false);
   const [deckModalTab, setDeckModalTab] = useState('list');
 
-  // Decks state persisted in LocalStorage (merge with newest Unit 5 Register & Tra Da intents)
+  // Decks state persisted in LocalStorage (merge with newest Unit 6 Make & Do & Tra Da intents)
   const [decks, setDecks] = useState(() => {
     try {
-      const saved = localStorage.getItem('arcade_collocations_decks_v7_register');
+      const saved = localStorage.getItem('arcade_collocations_decks_v8_makedo');
       if (saved) {
         const parsed = JSON.parse(saved);
         const updatedParsed = parsed.map(deck => {
           if (deck.id === 'deck-all') {
             return {
               ...deck,
-              name: 'Tất cả 84 Collocations (Đầy đủ mọi Unit)',
+              name: 'Tất cả 108 Collocations (Đầy đủ mọi Unit)',
               items: DEFAULT_COLLOCATIONS,
               selectedIds: DEFAULT_COLLOCATIONS.map(i => i.id)
             };
@@ -80,17 +80,17 @@ export default function App() {
 
   const [activeDeckId, setActiveDeckId] = useState(() => {
     try {
-      const savedId = localStorage.getItem('arcade_collocations_active_deck_id_v7');
-      return savedId || 'deck-unit-5-register';
+      const savedId = localStorage.getItem('arcade_collocations_active_deck_id_v8');
+      return savedId || 'deck-make-and-do';
     } catch (e) {
-      return 'deck-unit-5-register';
+      return 'deck-make-and-do';
     }
   });
 
   // Save decks to LocalStorage
   useEffect(() => {
     try {
-      localStorage.setItem('arcade_collocations_decks_v7_register', JSON.stringify(decks));
+      localStorage.setItem('arcade_collocations_decks_v8_makedo', JSON.stringify(decks));
     } catch (e) {}
   }, [decks]);
 
